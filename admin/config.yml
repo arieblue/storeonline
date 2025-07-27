@@ -12,7 +12,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nama Produk", name: "title", widget: "string" }
-      - { label: "Deskripsi", name: "body", widget: "markdown" }
-      - { label: "Gambar", name: "image", widget: "image" }
+      - { label: "Nama", name: "nama", widget: "string" }
+      - { label: "Deskripsi", name: "deskripsi", widget: "text" }
       - { label: "Harga", name: "harga", widget: "number" }
+      - { label: "Gambar", name: "gambar", widget: "image" }
