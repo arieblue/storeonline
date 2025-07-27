@@ -12,5 +12,20 @@
 <body>
   <h1>Panel Admin ARIEBLUE Store</h1>
   <p>Selamat datang di halaman admin.</p>
+
+  <!-- Tambahkan script Netlify Identity & CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
