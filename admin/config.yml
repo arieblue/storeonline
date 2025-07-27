@@ -14,5 +14,5 @@ collections:
     fields:
       - { label: "Nama Produk", name: "title", widget: "string" }
       - { label: "Deskripsi", name: "body", widget: "markdown" }
-      - { label: "Harga", name: "harga", widget: "string" }
       - { label: "Gambar", name: "image", widget: "image" }
+      - { label: "Harga", name: "harga", widget: "number" }
