@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ARIEBLUE Admin Panel</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.7/css/pico.min.css">
-</head>
-<body>
-  <main class="container">
-    <h2>Admin Panel ARIEBLUE</h2>
-    <p>Gunakan tombol di bawah untuk login sebagai admin:</p>
-    <button onclick="netlifyIdentity.open()">Login / Daftar</button>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel - ARIEBLUE</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <h1>Selamat datang di Admin Panel ARIEBLUE</h1>
+    <p>Gunakan login Netlify Identity untuk mengakses admin.</p>
 
-  <!-- ⚠️ Netlify Identity Widget wajib -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    // Inisialisasi widget
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        console.log("Init user:", user);
-      });
-
-      // Otomatis buka modal konfirmasi jika invite link
-      window.netlifyIdentity.on("login", user => {
-        console.log("Login success:", user);
-        window.location.href = "/admin/dashboard.html"; // Ganti ke dashboard adminmu
-      });
-    }
-    window.netlifyIdentity.init();
-  </script>
-</body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+        window.netlifyIdentity.init();
+      }
+    </script>
+  </body>
 </html>
