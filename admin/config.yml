@@ -6,13 +6,11 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "produk"
-    label: "Produk"
-    folder: "produk"
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nama", name: "nama", widget: "string" }
-      - { label: "Deskripsi", name: "deskripsi", widget: "text" }
-      - { label: "Harga", name: "harga", widget: "number" }
-      - { label: "Gambar", name: "gambar", widget: "image" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
